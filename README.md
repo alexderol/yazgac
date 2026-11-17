@@ -9,6 +9,8 @@ Word (.docx) ve Excel (.xlsx / .xls / .csv) dosyalarını açıp düzenleyebilen
 
 İlk çalıştırmada `node_modules` yoksa `npm install` otomatik çalışır (internet gerekir).
 
+**Masaüstü kısayolu:** `kisayol-olustur.bat` dosyasına çift tıklayın; masaüstüne simgeli bir "Yazgaç" kısayolu eklenir.
+
 ## Özellikler
 
 **Word**
@@ -48,4 +50,6 @@ Asgari bir editördür: Word'de resim, tablo, sayfa düzeni, yazı tipi/renk aya
 - `office.js` – Word/Excel okuma-yazma mantığı
 - `renderer.js` – Arayüz (Word ve Excel editörleri)
 - `index.html`, `style.css` – Arayüz yapısı ve görünümü
+- `build/` – Uygulama simgesi (icon.svg, icon.png, icon.ico) ve simge üretme betiği
+- `kisayol-olustur.bat` – Masaüstü kısayolu oluşturur
 - `ornekler/` – Test için oluşturulmuş örnek belgeler
