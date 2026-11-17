@@ -1,0 +1,94 @@
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; height: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  color: #222;
+  background: #e9ebee;
+}
+.hidden { display: none !important; }
+.screen { height: 100vh; display: flex; flex-direction: column; }
+
+/* Başlangıç */
+#start { align-items: center; justify-content: center; text-align: center; }
+#start h1 { font-size: 36px; margin-bottom: 4px; }
+.start-buttons { display: flex; gap: 16px; margin: 24px 0; }
+button.big {
+  padding: 18px 26px; font-size: 16px; border-radius: 10px;
+  border: 1px solid #c8ccd2; background: #fff; cursor: pointer;
+}
+button.big:hover { background: #f3f6fb; border-color: #5b8def; }
+.hint { color: #777; font-size: 12px; }
+
+/* Araç çubuğu */
+.toolbar {
+  display: flex; align-items: center; gap: 4px; flex-wrap: wrap;
+  padding: 6px 8px; background: #f7f8fa; border-bottom: 1px solid #d5d8dd;
+}
+.toolbar button, .toolbar select {
+  min-width: 32px; height: 30px; padding: 0 8px;
+  border: 1px solid transparent; border-radius: 5px; background: transparent;
+  cursor: pointer; font-size: 14px;
+}
+.toolbar button:hover { background: #e3e7ee; border-color: #c8ccd2; }
+.toolbar button.active { background: #d6e2ff; border-color: #5b8def; }
+.toolbar select { border-color: #c8ccd2; background: #fff; }
+.sep { width: 1px; height: 22px; background: #d5d8dd; margin: 0 4px; }
+.spacer { flex: 1; }
+
+/* Word */
+.page-wrap { flex: 1; overflow: auto; padding: 24px 0; }
+.page {
+  width: 794px; min-height: 1123px; margin: 0 auto; padding: 72px 80px;
+  background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.15);
+  outline: none; line-height: 1.5; font-size: 15px;
+  font-family: Calibri, "Segoe UI", Arial, sans-serif;
+}
+.page h1 { font-size: 26px; margin: 18px 0 8px; }
+.page h2 { font-size: 20px; margin: 16px 0 6px; }
+.page h3 { font-size: 16px; margin: 14px 0 6px; }
+.page p { margin: 0 0 8px; }
+.page table { border-collapse: collapse; margin: 8px 0; }
+.page td, .page th { border: 1px solid #999; padding: 4px 8px; }
+
+/* Excel */
+.formula-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 4px 8px; background: #fff; border-bottom: 1px solid #d5d8dd;
+}
+#cellName { min-width: 56px; padding: 4px 6px; border: 1px solid #c8ccd2; border-radius: 4px; text-align: center; background: #f7f8fa; }
+#formulaInput { flex: 1; padding: 5px 8px; border: 1px solid #c8ccd2; border-radius: 4px; font-family: Consolas, monospace; }
+.cell-info { color: #666; margin-right: 8px; font-size: 12px; }
+.grid-wrap { flex: 1; overflow: auto; background: #fff; }
+#grid { border-collapse: collapse; table-layout: fixed; }
+#grid th, #grid td {
+  border: 1px solid #d5d8dd; min-width: 96px; width: 96px; height: 26px;
+  padding: 2px 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  font-size: 13px;
+}
+#grid th {
+  background: #f1f3f6; color: #555; font-weight: 600; text-align: center;
+  position: sticky; top: 0; z-index: 2; user-select: none;
+}
+#grid th.row-head { position: sticky; left: 0; width: 46px; min-width: 46px; z-index: 1; }
+#grid th.corner { left: 0; z-index: 3; }
+#grid th.hl { background: #d6e2ff; color: #1b4fbf; }
+#grid td { outline: none; cursor: cell; }
+#grid td:focus { outline: 2px solid #2f6fed; outline-offset: -1px; white-space: normal; overflow: visible; }
+#grid td.num { text-align: right; }
+.sheet-tabs {
+  display: flex; gap: 2px; padding: 4px 8px; background: #f1f3f6; border-top: 1px solid #d5d8dd; overflow-x: auto;
+}
+.sheet-tabs button {
+  padding: 4px 14px; border: 1px solid #c8ccd2; border-bottom: none; background: #e3e7ee;
+  border-radius: 6px 6px 0 0; cursor: pointer;
+}
+.sheet-tabs button.active { background: #fff; font-weight: 600; color: #1b4fbf; }
+
+/* Durum */
+.status {
+  position: fixed; bottom: 36px; left: 50%; transform: translateX(-50%);
+  background: #333; color: #fff; padding: 8px 16px; border-radius: 6px;
+  opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 10;
+}
+.status.show { opacity: .95; }
