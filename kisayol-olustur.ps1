@@ -1,4 +1,4 @@
-# Masaüstüne "Yazgaç" kısayolu oluşturur (simgeli). Çift tıklayınca uygulama açılır.
+﻿# Masaüstüne "Yazgaç" kısayolu oluşturur (simgeli). Çift tıklayınca uygulama açılır.
 $proje = $PSScriptRoot
 $electron = Join-Path $proje "node_modules\electron\dist\electron.exe"
 if (-not (Test-Path $electron)) {
